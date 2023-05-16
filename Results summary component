@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-size: 18px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        line-height: 1;
+        font-weight: 500;
+      }
+
+      .container {
+        max-width: 1440px;
+        height: auto;
+        padding: 0 32px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .grid {
+        display: grid;
+        width: 850px;
+        column-gap: 0;
+        row-gap: 3.2rem;
+        margin: 0 auto;
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.303);
+      }
+
+      .grid--2-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-result {
+        padding: 9.6rem 9.6rem;
+      }
+
+      .result {
+        display: flex;
+        background-image: linear-gradient(
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+        border-radius: 25px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header {
+        font-size: 1.5rem;
+        padding: 3rem;
+        color: hsl(241, 100%, 89%);
+      }
+
+      .number-result {
+        display: flex;
+        background-image: linear-gradient(
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+        padding: 4rem;
+        border-radius: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .number76 {
+        font-size: 5rem;
+      }
+
+      .of100 {
+        color: hsl(241, 100%, 89%);
+      }
+
+      .Great {
+        padding: 1.2rem;
+        font-size: 2rem;
+        margin-top: 1rem;
+      }
+
+      .text {
+        text-align: center;
+        line-height: 1.5;
+        font-weight: 400;
+        padding: 0 2rem 2rem 3rem;
+        font-size: 1rem;
+        color: hsl(241, 100%, 89%);
+        margin-bottom: 1rem;
+      }
+
+      .summary {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        border-radius: 25px;
+      }
+
+      .header--2 {
+        color: hsl(224, 30%, 27%);
+        font-size: 1.5rem;
+        padding: 3rem 3rem 0rem 3rem;
+      }
+
+      .list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        padding: 2rem 3rem 3rem 3rem;
+      }
+
+      .list-item,
+      .numbers {
+        color: black;
+      }
+
+      .color-red {
+        display: flex;
+        justify-content: space-between;
+        color: hsl(0, 100%, 67%);
+        background-color: hsla(0, 100%, 67%, 0.121);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .color-yellow {
+        display: flex;
+        justify-content: space-between;
+        color: hsl(39, 100%, 56%);
+        background-color: hsla(39, 100%, 56%, 0.121);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .color-green {
+        display: flex;
+        justify-content: space-between;
+        color: hsl(166, 100%, 37%);
+        background-color: hsla(166, 100%, 37%, 0.121);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .color-blue {
+        display: flex;
+        justify-content: space-between;
+        color: hsl(234, 85%, 45%);
+        background-color: hsla(234, 85%, 45%, 0.121);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .numbers-second {
+        color: #999;
+      }
+
+      .button {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1rem;
+        color: aliceblue;
+        width: 250px;
+        padding: 1rem;
+        border-radius: 2rem;
+        border: none;
+        background-image: linear-gradient(
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+        /* margin-bottom: 1rem; */
+        align-self: center;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section-result">
+        <div class="grid grid--2-cols">
+          <div class="result">
+            <div class="header">Your Result</div>
+            <div class="number-result">
+              <div class="number76">76</div>
+              <div class="of100">of 100</div>
+            </div>
+            <div class="Great">Great</div>
+            <div class="text">
+              You scored higher than 65% of
+              <p>the people who have taken</p>
+              these tests.
+            </div>
+          </div>
+
+          <div class="summary">
+            <div class="header--2">Summary</div>
+            <ul class="list">
+              <li class="list-item color-red">
+                <img src="assets/images/icon-reaction.svg" /> Reaction
+                <span class="numbers"
+                  >80 <span class="numbers-second">/ 100</span></span
+                >
+              </li>
+              <li class="list-item color-yellow">
+                <img src="assets/images/icon-memory.svg" />
+                Memory
+                <span class="numbers"
+                  >92 <span class="numbers-second">/ 100</span></span
+                >
+              </li>
+              <li class="list-item color-green">
+                <img src="assets/images/icon-verbal.svg" />
+                Verbal
+                <span class="numbers"
+                  >61 <span class="numbers-second"> / 100</span></span
+                >
+              </li>
+              <li class="list-item color-blue">
+                <img src="assets/images/icon-visual.svg" />
+                Visual
+                <span class="numbers"
+                  >72 <span class="numbers-second">/ 100</span></span
+                >
+              </li>
+            </ul>
+            <button class="button">Continue</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>
+  </body>
+</html>
